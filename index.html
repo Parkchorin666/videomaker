@@ -3,15 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Pages Video Generator</title>
+    <title>동영상 생성 폼</title>
 </head>
 <body>
-    <h1>GitHub Pages Video Generator</h1>
-    <form method="POST" action="/">
-        {{ form.hidden_tag() }}
-        <label for="content">Content:</label>
-        {{ form.content(class="form-control") }}
-        <button type="submit">Generate Video</button>
+    <form id="videoForm">
+        <label for="videoContent">동영상 내용:</label>
+        <textarea id="videoContent" name="videoContent" rows="4" cols="50"></textarea>
+        <br>
+        <button type="button" onclick="generateVideo()">동영상 생성</button>
     </form>
+
+    <script>
+        function generateVideo() {
+            var videoContent = document.getElementById("videoContent").value;
+            // 여기에 동영상 생성을 위한 추가 로직을 구현하세요.
+
+            // 예시: 간단한 경고창 표시
+            alert("동영상 생성 중: " + videoContent);
+        }
+    </script>
 </body>
 </html>
